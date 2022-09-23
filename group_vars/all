@@ -1,0 +1,40 @@
+user:
+    name: julian
+    group: julian
+
+hostname: manjaro-vm
+
+ssh:
+    port: 22
+    key_filename: id_ed25519
+    enable_sshd: False
+
+base_packages:
+    - base-devel
+    - man-db
+    - man-pages
+    - pacman-contrib
+    - fwupd
+    - dmidecode
+    - tmux
+    - git
+    - rsync
+    - coreutils
+    - moreutils
+    - dateutils
+    - bc
+    - ranger
+    - python-keyring
+    - python-secretstorage
+    - tig
+    - ruby
+    - pv
+    - minicom
+    - jq
+    - screen
+    - termdown
+    - fzf
+    - cpulimit
+
+journal:
+    max_size: 500M

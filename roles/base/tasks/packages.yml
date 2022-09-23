@@ -1,0 +1,19 @@
+---
+- name: Install universal base packages
+  pacman:
+    name: "{{ base_packages }}"
+    state: present
+  tags:
+    - packages
+
+- name: Create pacman hook directory
+  file: path=/etc/pacman.d/hooks
+        state=directory
+  tags:
+    - packages
+
+- name: Use all cores when compressing packages
+  lineinfile:
+    dest: /etc/makepkg.conf
+    regexp: "^COMPRESSXZ"
+    line: "COMPRESSXZ=(xz -c -z - --threads=0)"
