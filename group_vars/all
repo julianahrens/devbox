@@ -37,14 +37,16 @@ base_packages:
     - fzf
     - cpulimit
 
-base_packages_aur:
-    - git-extras
-    - downgrade
-    - zplug
-    - ctmg
-    - lsdesktopf
-    - plugin-autenticacao-gov-pt
-    - zsh-git-prompt
+aur:
+    dir: aur
+    packages:
+        - git-extras
+        - downgrade
+        - zplug
+        - ctmg
+        - lsdesktopf
+        - plugin-autenticacao-gov-pt
+        - zsh-git-prompt
 
 journal:
     max_size: 500M
