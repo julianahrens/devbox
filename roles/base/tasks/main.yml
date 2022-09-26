@@ -2,6 +2,7 @@
 - name: Refresh pacman mirrors
   pacman:
     update_cache: yes
+    upgrade: yes
 
 - name: Install inetutils for hostname
   pacman:
@@ -16,3 +17,5 @@
 - include_tasks: shell.yml
 - include_tasks: packages.yml
 - include_tasks: journal.yml
+- include_tasks: ntp.yml
+

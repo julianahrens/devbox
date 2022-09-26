@@ -6,6 +6,21 @@
   tags:
     - packages
 
+- name: Install universal base packages from arch user repository
+  shell: |
+    set -o pipefail
+    pamac build -d --no-confirm {{ item }} | grep "is up to date"
+    if [ $? != 0 ]; then
+      pamac build --no-confirm {{ item }}
+    fi
+  with_items: "{{ base_packages_aur }}"
+  become: true
+  register: command_result
+  failed_when: command_result.rc != 0
+  changed_when: "'successfully' in command_result.stdout"
+  tags:
+    - packages
+
 - name: Create pacman hook directory
   file: path=/etc/pacman.d/hooks
         state=directory

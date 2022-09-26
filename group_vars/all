@@ -3,6 +3,7 @@ user:
     group: julian
 
 hostname: manjaro-vm
+timezone: Europe/Berlin
 
 ssh:
     port: 22
@@ -35,6 +36,15 @@ base_packages:
     - termdown
     - fzf
     - cpulimit
+
+base_packages_aur:
+    - git-extras
+    - downgrade
+    - zplug
+    - ctmg
+    - lsdesktopf
+    - plugin-autenticacao-gov-pt
+    - zsh-git-prompt
 
 journal:
     max_size: 500M
